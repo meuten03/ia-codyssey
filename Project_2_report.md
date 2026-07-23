@@ -21,18 +21,18 @@
 ### 3.1 워크플로우 개념 다이어그램
 
 [Trigger: Schedule (매일 08:00)]
-│
-├───> [Action 1: RSS Feed Read (9개 카테고리 동시 수집)]
-│        ├── 사건사고 / 증권주식 / 국내정치 / 국제정치
-│        └── 야구 / 축구 / 영화 / 여행지 / 맛집
-│
-├───> [Action 2: Text Aggregator (데이터 하나로 병합)]
-│
-├───> [Condition Branch: Filter (유효 데이터 존재 여부 검증)]
-│
-├───> [Action 3 (AI): Gemini 2.5 Flash (카테고리별 1~2줄 요약 생성)]
-│
-└───> [Action 4: HTTP POST (ntfy.sh REST API 푸시 발송)]
+│  
+├───> [Action 1: RSS Feed Read (9개 카테고리 동시 수집)]  
+│        ├── 사건사고 / 증권주식 / 국내정치 / 국제정치  
+│        └── 야구 / 축구 / 영화 / 여행지 / 맛집  
+│  
+├───> [Action 2: Text Aggregator (데이터 하나로 병합)]  
+│  
+├───> [Condition Branch: Filter (유효 데이터 존재 여부 검증)]  
+│  
+├───> [Action 3 (AI): Gemini 2.5 Flash (카테고리별 1~2줄 요약 생성)]  
+│  
+└───> [Action 4: HTTP POST (ntfy.sh REST API 푸시 발송)]  
 
 
 ### 3.2 단계별 매핑 데이터 상세
