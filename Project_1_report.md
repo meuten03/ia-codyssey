@@ -20,8 +20,8 @@
 
 ### 3.1 Make (Integromat) 구현
 * **워크플로우 구성 화면 (캡처 위치):**
-  > `[Make Scenario Builder 캡처 이미지 첨부]`
-  > *(RSS 모듈 9개 $\rightarrow$ Text Aggregator 9개 $\rightarrow$ Gemini 2.5 Flash $\rightarrow$ HTTP POST ntfy 모듈 연결 캔버스)*
+<img width="710" height="761" alt="image" src="https://github.com/user-attachments/assets/97b347c1-f7c7-4c28-ac27-f0cc7e346224" />
+
 * **실행 결과 화면 (캡처 위치):**
   > `[Make Run Once 실행 성공 로그 & ntfy 푸시 알림 수신 캡처 이미지 첨부]`
   > *(Status Code: 200 / ntfy 모바일 앱 상단바 알림 스크린샷)*
