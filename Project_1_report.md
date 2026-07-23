@@ -23,13 +23,11 @@
 <img width="710" height="761" alt="image" src="https://github.com/user-attachments/assets/97b347c1-f7c7-4c28-ac27-f0cc7e346224" />
 
 * **실행 결과 화면 (캡처 위치):**
-  > `[Make Run Once 실행 성공 로그 & ntfy 푸시 알림 수신 캡처 이미지 첨부]`
-  > *(Status Code: 200 / ntfy 모바일 앱 상단바 알림 스크린샷)*
 
 ### 3.2 Zapier 구현
 * **워크플로우 구성 화면 (캡처 위치):**
-  > `[Zapier Zap Editor 캡처 이미지 첨부]`
-  > *(Schedule by Zapier $\rightarrow$ RSS by Zapier $\rightarrow$ AI Formatter $\rightarrow$ Webhooks by Zapier POST)*
+<img width="747" height="628" alt="image" src="https://github.com/user-attachments/assets/f186a9a9-0fc0-4ce8-86e7-53becc194c76" />
+
 * **실행 결과 화면 (캡처 위치):**
   > `[Zapier Test Step 실행 결과 & ntfy 푸시 알림 수신 캡처 이미지 첨부]`
 
