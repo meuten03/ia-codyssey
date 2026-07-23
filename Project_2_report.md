@@ -20,7 +20,7 @@
 
 ### 3.1 워크플로우 개념 다이어그램
 
-[Trigger: Schedule (매일 08:00)]
+[Trigger: Schedule (매일 08:00)]  
 │  
 ├───> [Action 1: RSS Feed Read (9개 카테고리 동시 수집)]  
 │        ├── 사건사고 / 증권주식 / 국내정치 / 국제정치  
