@@ -1,0 +1,411 @@
+{
+    "name": "Integration RSS, Weather, Gemini AI, HTTP",
+    "flow": [
+        {
+            "id": 2,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%82%AC%EA%B1%B4+%EC%82%AC%EA%B3%A0&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2096,
+                    "y": -967,
+                    "name": "RSS - 사건사고"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 2,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{2.title}}\n링크: {{2.url}}\n내용: {{2.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2396,
+                    "y": -967,
+                    "name": "취합 - 사건사고"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%A3%BC%EC%8B%9C+%EC%A6%9D%EC%8B%9C&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2099,
+                    "y": -748,
+                    "name": "RSS - 증권/주식"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 4,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{4.title}}\n링크: {{4.url}}\n내용: {{4.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2399,
+                    "y": -748,
+                    "name": "취합 - 증권/주식"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%A0%95%EC%B9%98&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2091,
+                    "y": -511,
+                    "name": "RSS - 국내정치"
+                }
+            }
+        },
+        {
+            "id": 7,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 6,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{6.title}}\n링크: {{6.url}}\n내용: {{6.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2391,
+                    "y": -511,
+                    "name": "취합 - 국내정치"
+                }
+            }
+        },
+        {
+            "id": 18,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EA%B5%AD%EC%A0%9C+%EC%A0%95%EC%B9%98&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2087,
+                    "y": -285,
+                    "name": "RSS - 국제정치"
+                }
+            }
+        },
+        {
+            "id": 20,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 18,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{18.title}}\n링크: {{18.url}}\n내용: {{18.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2387,
+                    "y": -285,
+                    "name": "취합 - 국제정치"
+                }
+            }
+        },
+        {
+            "id": 8,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=NC%EB%8B%A4%EC%9D%B4%EB%85%B8%EC%8A%A4&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2090,
+                    "y": -70,
+                    "name": "RSS - 야구 (NC 다이노스)"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 8,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{8.title}}\n링크: {{8.url}}\n내용: {{8.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2390,
+                    "y": -70,
+                    "name": "취합 - 야구"
+                }
+            }
+        },
+        {
+            "id": 19,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%86%90%ED%9D%A5%EB%AF%BC+OR+%EC%9D%B4%EA%B0%95%EC%9D%B8+OR+%ED%99%A9%ED%9D%AC%EC%B0%AC+OR+%EA%B9%80%EB%AF%BC%EC%9E%AC&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2079,
+                    "y": 142,
+                    "name": "RSS - 축구 (해외파 선수)"
+                }
+            }
+        },
+        {
+            "id": 21,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 19,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{19.title}}\n링크: {{19.url}}\n내용: {{19.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2379,
+                    "y": 142,
+                    "name": "취합 - 축구"
+                }
+            }
+        },
+        {
+            "id": 10,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%96%88%ED%90%99+%EA%B0%9C%EB%B4%89&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2086,
+                    "y": 365,
+                    "name": "RSS - 영화"
+                }
+            }
+        },
+        {
+            "id": 11,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 10,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{10.title}}\n링크: {{10.url}}\n내용: {{10.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2386,
+                    "y": 365,
+                    "name": "취합 - 영화"
+                }
+            }
+        },
+        {
+            "id": 12,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EC%97%AC%ED%96%89%EC%A7%80+%EC%B6%94%EC%B2%9C&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2088,
+                    "y": 587,
+                    "name": "RSS - 여행지"
+                }
+            }
+        },
+        {
+            "id": 13,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 12,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{12.title}}\n링크: {{12.url}}\n내용: {{12.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2388,
+                    "y": 587,
+                    "name": "취합 - 여행지"
+                }
+            }
+        },
+        {
+            "id": 14,
+            "module": "rss:ActionReadArticles",
+            "version": 4,
+            "parameters": {},
+            "mapper": {
+                "url": "https://news.google.com/rss/search?q=%EB%A7%9B%EC%A7%91+%EC%B6%94%EC%B2%9C&hl=ko&gl=KR&ceid=KR:ko",
+                "gzip": true,
+                "maxResults": 10
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2084,
+                    "y": 831,
+                    "name": "RSS - 맛집"
+                }
+            }
+        },
+        {
+            "id": 15,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 14,
+                "rowSeparator": "\n"
+            },
+            "mapper": {
+                "value": "제목: {{14.title}}\n링크: {{14.url}}\n내용: {{14.description}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2384,
+                    "y": 831,
+                    "name": "취합 - 맛집"
+                }
+            }
+        },
+        {
+            "id": 24,
+            "module": "http:MakeRequest",
+            "version": 4,
+            "parameters": {
+                "authenticationType": "noAuth"
+            },
+            "mapper": {
+                "url": "https://api.open-meteo.com/v1/forecast?latitude=35.2280&longitude=128.6811&daily=precipitation_probability_max,uv_index_max&timezone=Asia%2FSeoul",
+                "method": "get",
+                "parseResponse": true
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2384,
+                    "y": 1050,
+                    "name": "창원 날씨 API 호출"
+                }
+            }
+        },
+        {
+            "id": 16,
+            "module": "gemini-ai:simpleTextPrompt",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "model": "gemini-2.5-flash",
+                "textPrompt": "너는 우리 가족 전용 데일리 뉴스 및 정보 에디터야. 아래 수집된 데이터와 창원 날씨 정보를 바탕으로 깔끔하게 브리핑해줘.\n\n[오늘의 창원 날씨 정보]\n- 최고 강수 확률: {{24.data.daily.precipitation_probability_max[0]}}%\n- 최대 자외선 지수: {{24.data.daily.uv_index_max[0]}}\n\n수집된 뉴스는 사건사고, 증권/주식, 국내정치, 국제정치, 스포츠(야구-NC다이노스), 스포츠(축구-해외파), 영화, 여행지, 맛집 카테고리별로 각각 1~2줄로 요약해줘.\n작성 시 각 소식 끝에는 원문링크(URL)를 꼭 첨부해줘.\n카카오톡 전송용이므로 이모지를 활용해서 가독성 높게 작성해줘.\n\n🌤️ 오늘의 창원 날씨\n- 강수확률 및 자외선 지수를 고려한 한 줄 조언 작성\n\n📌 사건/사고\n{{3.text}}\n\n📌 증권/주식\n{{5.text}}\n\n📌 국내정치\n{{7.text}}\n\n📌 국제정치\n{{20.text}}\n\n📌 야구 (NC 다이노스)\n{{9.text}}\n\n📌 축구 (해외파 선수 소식)\n{{21.text}}\n\n📌 영화 소식\n{{11.text}}\n\n📌 여행지 추천\n{{13.text}}\n\n📌 맛집 추천\n{{15.text}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2775,
+                    "y": -17,
+                    "name": "Gemini 요약 생성"
+                }
+            }
+        },
+        {
+            "id": 23,
+            "module": "http:MakeRequest",
+            "version": 4,
+            "parameters": {
+                "authenticationType": "noAuth"
+            },
+            "mapper": {
+                "url": "https://ntfy.sh/Todays",
+                "method": "post",
+                "headers": [
+                    {
+                        "name": "Priority",
+                        "value": "default"
+                    },
+                    {
+                        "name": "Tags",
+                        "value": "newspaper,newspaper"
+                    }
+                ],
+                "contentType": "custom",
+                "rawBodyContent": "📰 오늘의 모닝 데일리 뉴스 & 날씨\n\n{{16.result}}",
+                "contentTypeValue": "text/plain; charset=utf-8"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 3377,
+                    "y": -22,
+                    "name": "ntfy.sh 알림 전송"
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1
+    }
+}
